@@ -1,0 +1,4 @@
+<h2>{{ photo.name }}</h2>
+<img src="{{ photo.photo.url }}" alt="{{ photo.name }}">
+<p>{{ photo.text_of_image }}</p>
+<a href="{% url 'image_upload' %}">Другая фотография</a>
