@@ -6,7 +6,7 @@ import pytesseract
 from PIL import Image
 
 
-# Create your views here.
+
 def image_view(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
@@ -25,7 +25,7 @@ def success(request):
 
 def show_extract_text(request):
     photo = Photo.objects.last()
-    if photo.language == True:
+    if photo.language == 'rus':
         photo.text_of_image = get_text_rus(photo.photo.path)
     else:
         photo.text_of_image = get_text(photo.photo.path)
